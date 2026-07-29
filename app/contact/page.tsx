@@ -18,7 +18,9 @@ import { content } from "@/data/content";
 const contact = content.contact;
 const { form } = contact;
 
-const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+// Trimmed so a whitespace-only value counts as unconfigured rather than
+// producing a request that is guaranteed to fail.
+const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT?.trim();
 
 /** Renders copy whose `{email}` token becomes a mailto link. */
 function EmailText({ text }: { text: string }) {
