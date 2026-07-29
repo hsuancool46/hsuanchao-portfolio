@@ -18,9 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const work = getWorkBySlug(slug);
   if (!work) return {};
 
+  const title = `${work.title} — ${content.home.meta.navLabel}`;
+
   return {
-    title: `${work.title} — ${content.home.meta.navLabel}`,
+    title,
     description: work.summary,
+    openGraph: {
+      title,
+      description: work.summary,
+    },
   };
 }
 

@@ -6,6 +6,10 @@ import { content } from "@/data/content";
 export const metadata: Metadata = {
   title: content.contact.meta.title,
   description: content.contact.meta.description,
+  openGraph: {
+    title: content.contact.meta.title,
+    description: content.contact.meta.description,
+  },
 };
 
 export default function ContactLayout({

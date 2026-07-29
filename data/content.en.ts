@@ -17,6 +17,11 @@ export const en: SiteContent = {
       description:
         "Process design, stakeholder coordination, and practical decisions when budgets, regulations, and operational realities collide",
     },
+    socialImage: {
+      wordmark: "Hsuan Chao",
+      tagline: "Program & Operations Management",
+      alt: "Hsuan Chao — Program & Operations Management",
+    },
     hero: {
       headline:
         "Turning Complex, Constrained Programs into Systems People Can Actually Run",
@@ -749,7 +754,12 @@ This case demonstrates how I operate inside a leadership structure: not by compe
       ],
       message: "Describe your challenge",
       submit: "Submit",
+      submitting: "Sending…",
       topicError: "Please select a topic",
+      submitError:
+        "Something went wrong and your message was not sent. Please try again, or email me directly at {email}.",
+      configError:
+        "The contact form is not available right now. Please email me directly at {email}.",
     },
     success: {
       message:

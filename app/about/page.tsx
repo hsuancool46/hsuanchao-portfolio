@@ -8,6 +8,10 @@ const { meta, positioning, capabilities, methodology, scenarios } =
 export const metadata: Metadata = {
   title: meta.title,
   description: meta.description,
+  openGraph: {
+    title: meta.title,
+    description: meta.description,
+  },
 };
 
 export default function AboutPage() {

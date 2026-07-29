@@ -16,6 +16,10 @@ const works = content.works;
 export const metadata: Metadata = {
   title: works.meta.title,
   description: works.meta.description,
+  openGraph: {
+    title: works.meta.title,
+    description: works.meta.description,
+  },
 };
 
 export default function WorksPage() {

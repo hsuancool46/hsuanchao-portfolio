@@ -18,9 +18,26 @@ import { content } from "@/data/content";
 const contact = content.contact;
 const { form } = contact;
 
-/** Splits the `{email}` token out of the prompt so it can render as a link. */
-const [emailPromptBefore, emailPromptAfter] =
-  contact.emailPrompt.split("{email}");
+const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
+/** Renders copy whose `{email}` token becomes a mailto link. */
+function EmailText({ text }: { text: string }) {
+  const [before, after] = text.split("{email}");
+  if (after === undefined) return <>{text}</>;
+
+  return (
+    <>
+      {before}
+      <a
+        href={`mailto:${contact.email}`}
+        className="underline underline-offset-4 hover:text-foreground"
+      >
+        {contact.email}
+      </a>
+      {after}
+    </>
+  );
+}
 
 function RequiredMark() {
   return (
@@ -36,17 +53,54 @@ export default function ContactPage() {
   const [email, setEmail] = useState("");
   const [topic, setTopic] = useState<string | null>(null);
   const [message, setMessage] = useState("");
+  const [gotcha, setGotcha] = useState("");
   const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitting) return;
+
     if (!topic) {
       setError(form.topicError);
       return;
     }
+    if (!endpoint) {
+      setError(form.configError);
+      return;
+    }
+
     setError(null);
-    setSubmitted(true);
+    setSubmitting(true);
+
+    try {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          company,
+          email,
+          topic: form.topics.find((t) => t.value === topic)?.label ?? topic,
+          message,
+          // Sent as-is: Formspree drops the submission when it is non-empty.
+          _gotcha: gotcha,
+        }),
+      });
+
+      if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+
+      // Only on success — a failed send keeps the form and its values intact.
+      setSubmitted(true);
+    } catch {
+      setError(form.submitError);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   function handleReset() {
@@ -55,6 +109,7 @@ export default function ContactPage() {
     setEmail("");
     setTopic(null);
     setMessage("");
+    setGotcha("");
     setError(null);
     setSubmitted(false);
   }
@@ -76,14 +131,7 @@ export default function ContactPage() {
               <p key={paragraph}>{paragraph}</p>
             ))}
             <p>
-              {emailPromptBefore}
-              <a
-                href={`mailto:${contact.email}`}
-                className="underline underline-offset-4 hover:text-foreground"
-              >
-                {contact.email}
-              </a>
-              {emailPromptAfter}
+              <EmailText text={contact.emailPrompt} />
             </p>
           </div>
         </section>
@@ -100,6 +148,22 @@ export default function ContactPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+              {/*
+                Honeypot: moved off-screen rather than display:none, since bots
+                skip fields that are not rendered. Formspree treats a filled-in
+                `_gotcha` as spam and silently discards the submission.
+              */}
+              <input
+                type="text"
+                name="_gotcha"
+                value={gotcha}
+                onChange={(e) => setGotcha(e.target.value)}
+                className="absolute left-[-9999px]"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden
+              />
+
               <div className="flex flex-col gap-2">
                 <Label htmlFor="name">
                   {form.name} <RequiredMark />
@@ -175,13 +239,19 @@ export default function ContactPage() {
 
               {error && (
                 <div className="text-sm text-destructive" role="alert">
-                  {error}
+                  <EmailText text={error} />
                 </div>
               )}
 
               <div>
-                <Button type="submit" size="lg" className="px-6">
-                  {form.submit}
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="px-6"
+                  disabled={submitting}
+                  aria-busy={submitting}
+                >
+                  {submitting ? form.submitting : form.submit}
                 </Button>
               </div>
             </form>

@@ -34,6 +34,15 @@ export type HomeCase = {
 
 export type HomeContent = {
   meta: PageMeta;
+  /** Copy baked into the generated Open Graph / Twitter preview image. */
+  socialImage: {
+    /** Wordmark in the lower-left corner. */
+    wordmark: string;
+    /** Single supporting line below centre. */
+    tagline: string;
+    /** `og:image:alt` / `twitter:image:alt`. */
+    alt: string;
+  };
   hero: {
     headline: string;
     subheadline: string;
@@ -177,8 +186,14 @@ export type ContactContent = {
     topics: ContactTopic[];
     message: string;
     submit: string;
+    /** Submit button label while the message is in flight. */
+    submitting: string;
     /** Shown when the required topic field is left empty. */
     topicError: string;
+    /** Shown when the form endpoint rejects or the request fails. */
+    submitError: string;
+    /** Shown when no form endpoint is configured. */
+    configError: string;
   };
   success: {
     message: string;
