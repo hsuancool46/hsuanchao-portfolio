@@ -604,7 +604,7 @@ Layer 4: Only build what outlasts the project
         summary:
           "Rebalancing a cross-border market expansion program when the original offline plan stalled",
         result:
-          "8x click target / 750 high-value inquiries / 47% YoY overseas revenue growth",
+          "8x click target / 700+ high-value inquiries / 40%+ YoY overseas revenue growth",
         detailTags: [
           "B2BMarketing",
           "MarketExpansion",
@@ -665,18 +665,17 @@ A planned mobile advertising format was ultimately cancelled when local review s
             label: "Results",
             heading: "Outcomes",
             body: `Digital acquisition
-✓ Paid media delivered close to 50M impressions and 2.4M clicks — 166% of the impression target and 8x the click target
-✓ Video content reached 1.3M views and 2M impressions
-✓ Paid channels generated 300 high-value inquiries
+✓ Paid media exceeded every acquisition target, reaching 8x the click target
+✓ Video content surpassed 1M views
+✓ 700+ high-value inquiries generated across digital and marketplace channels
 
-Marketplace and field execution
-✓ A local B2B marketplace produced a further 450 high-value inquiries
-✓ Four product showcase events drew 290 customers after the offline pipeline was rebuilt
-✓ 50 new dealer relationships established
-✓ Billboard placement in a major industrial corridor once media prices normalized
+Field execution
+✓ Four product showcase events rebuilt the delayed offline pipeline
+✓ Dozens of new dealer relationships established
+✓ Outdoor advertising placed in a major industrial corridor once media prices normalized
 
 Commercial outcome
-✓ Overseas revenue grew 47% year-on-year, exceeding the program target
+✓ 40%+ year-on-year overseas revenue growth, exceeding the program target
 ✓ Budget execution and reimbursement documentation completed at closeout`,
           },
           {

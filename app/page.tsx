@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { content } from "@/data/content";
-import { cn } from "@/lib/utils";
 
 const { hero, cases, cta } = content.home;
 
@@ -90,12 +89,14 @@ export default function Home() {
                 {cta.description}
               </p>
             </div>
-            <Link
-              href="/contact"
-              className={cn(buttonVariants({ size: "lg" }), "px-6")}
+            <Button
+              render={<Link href="/contact" />}
+              nativeButton={false}
+              size="lg"
+              className="px-6"
             >
               {cta.button}
-            </Link>
+            </Button>
           </div>
         </section>
       </div>
