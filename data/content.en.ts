@@ -44,7 +44,7 @@ export const en: SiteContent = {
           title: "Medical Dispute Response Protocol",
           tags: ["Process Design", "Risk Management"],
           summary:
-            "Converted high-pressure decisions into a clear, verifiable response protocol. Designed three response tracks (dispute / incident / violence), three evidence-collection checklists, and a standard external communication script. Released as a digital toolkit and a double-sided desk card distributed to all 206 member clinics citywide.",
+            "Converted high-pressure decisions into a clear, verifiable response protocol. Designed three response tracks (dispute / incident / violence), three evidence-collection checklists, and a standard external communication script. Released as a digital toolkit and a double-sided desk card distributed to 200+ member clinics citywide.",
           outcome: "Gave physicians a clear response path under pressure",
         },
         {
@@ -188,7 +188,7 @@ export const en: SiteContent = {
         summary:
           "Converting high-pressure decisions into a verifiable response protocol",
         result:
-          "Clear response path under pressure / Distributed to 206 member clinics",
+          "Clear response path under pressure / Distributed to 200+ member clinics",
         detailTags: ["ProcessDesign", "RiskManagement", "Healthcare"],
         sections: [
           {
@@ -245,7 +245,7 @@ After revisions from V4 to V5, the association officially released the toolkit c
             label: "Results",
             heading: "Outcomes",
             body: `✓ A cross-disciplinary support team was formed and remains active
-✓ Physical and digital materials were distributed to all 206 member clinics citywide
+✓ Physical and digital materials were distributed to 200+ member clinics citywide
 ✓ First-phase training participation reached 170% of the mid-term target
 ✓ Physicians received a clear, immediately accessible response path`,
           },
@@ -437,7 +437,7 @@ On the surface, these are three additional checkpoints. In practice, they establ
 Total budget: NT$5,000,000
 Execution model: Sole program management across administration, procurement, reimbursement documentation, and cross-disciplinary coordination
 Collaborators: Lawyers, psychologists, social workers, emergency training institutions, health authorities
-Coverage: 6 partner clinics within a city-level network of 206 member clinics
+Coverage: 6 partner clinics within a city-level network of 200+ member clinics
 
 Project goal:
 Build an integrated resilience program for community clinics across three dimensions: legal literacy, personal and psychological safety, and emergency response.`,
@@ -451,7 +451,7 @@ Constraint 1: Sole program management + multi-party collaboration
 As the sole program manager, I coordinated lawyers, psychologists, social workers, government agencies, and external training providers. Each field operated according to different professional priorities, requiring a shared operating plan.
 
 Constraint 2: Fixed budget + diverse, initially unclear needs
-The NT$5M budget was fixed, but the target population spanned 206 clinics, each varying in size, specialty, equipment, and staffing — no single solution could serve them all. The program therefore required a tiered design.
+The NT$5M budget was fixed, but the target population spanned 200+ member clinics, each varying in size, specialty, equipment, and staffing — no single solution could serve them all. The program therefore required a tiered design.
 
 Constraint 3: Grant compliance rules + operational reality
 The grant imposed strict compliance and reimbursement requirements while the program still had to adapt to conditions that could not be known at the proposal stage.
@@ -473,7 +473,7 @@ When these constraints overlap, programs can easily begin chasing expenditure ra
 
 Release:
 - Digital: permanent download on the association's website
-- Physical: distributed to all 206 clinics citywide
+- Physical: distributed to 200+ member clinics citywide
 
 Status: officially launched on the association's website on April 17, 2026
 
@@ -482,7 +482,7 @@ The underlying design principle — converting high-pressure decisions into clea
               },
               {
                 heading:
-                  "Deliverable 2: TRAINOS Hybrid Platform + TECC Course Series",
+                  "Deliverable 2: Commissioned Hybrid Learning Platform + TECC Course Series",
                 body: `Structure:
 - BLS (8 hours, offered on an ongoing basis)
 - TECC Basic (4hr online + 4hr in-person)
@@ -525,7 +525,7 @@ Results:
               },
               {
                 heading: "Deliverable 4: Clinic Space Survey + Policy Findings",
-                body: `Survey scope: 60 clinics citywide (29% of member clinics)
+                body: `Survey scope: 60 clinics citywide (roughly 30% of member clinics)
 
 Findings:
 - Clinics with a basement: 10 (17%)
@@ -589,7 +589,7 @@ Layer 4: Only build what outlasts the project
             body: `✓ This is a single-city program; applying the approach at a larger scale would require re-validation
 ✓ Training completions and final participation figures are still accumulating during closeout
 ✓ Participation is measured by clinic count, not by depth of adoption within each clinic
-✓ All institutional and personal information has been de-identified`,
+✓ Identifying institutional and personal details have been removed or generalised for confidentiality.`,
           },
           {
             label: "Transferability",
