@@ -143,6 +143,11 @@ export type WorkCase = {
   result: string;
   /** Tag line on the detail page; may carry more tags than the card. */
   detailTags: string[];
+  /**
+   * Place in the flagship program, which drives how the works list groups the
+   * card. Omitted for cases that stand on their own.
+   */
+  group?: "flagship" | "subsystem";
   /** Shown above the case body, e.g. a de-identification disclosure. */
   note?: string;
   sections: WorkSection[];
@@ -156,6 +161,17 @@ export type WorksContent = {
   resultLabel: string;
   /** Link back to the list from a detail page. */
   backLabel: string;
+  /** Headings that carry the flagship / subsystem structure on the list page. */
+  groups: {
+    /** Eyebrow on the `flagship` card. */
+    flagshipLabel: string;
+    /** Heading above the cases nested under the flagship card. */
+    subsystemsTitle: string;
+    /** States the subordinate relationship in words, below the heading. */
+    subsystemsNote: string;
+    /** Heading above the cases with no `group`. */
+    standaloneTitle: string;
+  };
   items: WorkCase[];
 };
 

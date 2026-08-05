@@ -179,6 +179,13 @@ export const en: SiteContent = {
       "Four healthcare cases examine one flagship program at two levels: the overall governance strategy and three operating systems developed within it. A separate de-identified B2B case shows how the same decision framework applies to cross-border market expansion.",
     resultLabel: "Result",
     backLabel: "Back to Works",
+    groups: {
+      flagshipLabel: "Flagship program",
+      subsystemsTitle: "Systems built inside this program",
+      subsystemsNote:
+        "Each case below is one workstream of the program above, examined on its own terms.",
+      standaloneTitle: "Separate engagement",
+    },
     items: [
       /* ---------------------------------------------------------------- */
       {
@@ -190,6 +197,7 @@ export const en: SiteContent = {
         result:
           "Clear response path under pressure / Distributed to 200+ member clinics",
         detailTags: ["ProcessDesign", "RiskManagement", "Healthcare"],
+        group: "subsystem",
         sections: [
           {
             label: "Problem Statement",
@@ -277,6 +285,7 @@ After revisions from V4 to V5, the association officially released the toolkit c
           "MedicalAssociation",
           "GovernmentGrant",
         ],
+        group: "subsystem",
         sections: [
           {
             label: "Problem Statement",
@@ -354,6 +363,7 @@ Running the course as planned would have committed budget and venue capacity to 
           "RiskPrevention",
           "MedicalAssociation",
         ],
+        group: "subsystem",
         sections: [
           {
             label: "Problem Statement",
@@ -429,6 +439,7 @@ On the surface, these are three additional checkpoints. In practice, they establ
           "GovernmentGrant",
           "SinglePersonCoordination",
         ],
+        group: "flagship",
         sections: [
           {
             label: "Project Background",
