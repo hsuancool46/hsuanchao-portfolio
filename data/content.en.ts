@@ -424,11 +424,7 @@ On the surface, these are three additional checkpoints. In practice, they establ
       {
         slug: "resilience-system",
         title: "Physicians' Association Resilience System",
-        tags: [
-          "FlagshipProject",
-          "CrossDisciplinaryCoordination",
-          "GovernmentGrant",
-        ],
+        tags: ["CrossDisciplinaryCoordination", "GovernmentGrant"],
         summary:
           "16 months, NT$5M budget, sole program management, five integrated workstreams",
         result:
