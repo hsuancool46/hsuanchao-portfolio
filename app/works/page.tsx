@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { content } from "@/data/content";
+import { content, getWorkGroups } from "@/data/content";
 import type { WorkCase } from "@/data/types";
 import { cn } from "@/lib/utils";
 
@@ -20,9 +20,7 @@ const works = content.works;
  * subsystem cases were pulled out of the flagship program. Group membership
  * lives on the case (`group`), not in the array order.
  */
-const flagship = works.items.find((item) => item.group === "flagship");
-const subsystems = works.items.filter((item) => item.group === "subsystem");
-const standalone = works.items.filter((item) => !item.group);
+const { flagship, subsystems, standalone } = getWorkGroups();
 
 export const metadata: Metadata = {
   title: works.meta.title,

@@ -181,6 +181,7 @@ export const en: SiteContent = {
     backLabel: "Back to Works",
     groups: {
       flagshipLabel: "Flagship program",
+      partOfLabel: "Part of",
       subsystemsTitle: "Systems built inside this program",
       subsystemsNote:
         "Each case below is one workstream of the program above, examined on its own terms.",

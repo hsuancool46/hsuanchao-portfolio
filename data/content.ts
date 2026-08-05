@@ -36,5 +36,19 @@ export function getWorkBySlug(
   return getContent(locale).works.items.find((work) => work.slug === slug);
 }
 
+/**
+ * The works list split by place in the flagship program, so the list page and
+ * the detail pages derive the structure the same way.
+ */
+export function getWorkGroups(locale: Locale = defaultLocale) {
+  const { items } = getContent(locale).works;
+
+  return {
+    flagship: items.find((work) => work.group === "flagship"),
+    subsystems: items.filter((work) => work.group === "subsystem"),
+    standalone: items.filter((work) => !work.group),
+  };
+}
+
 /** Copy for the active locale. Only English ships today. */
 export const content = getContent();

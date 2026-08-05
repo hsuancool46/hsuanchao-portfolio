@@ -165,7 +165,12 @@ export type WorksContent = {
   groups: {
     /** Eyebrow on the `flagship` card. */
     flagshipLabel: string;
-    /** Heading above the cases nested under the flagship card. */
+    /** Eyebrow above the link from a `subsystem` detail page to the flagship. */
+    partOfLabel: string;
+    /**
+     * Heading above the cases nested under the flagship card, reused on the
+     * flagship detail page above the links to those cases.
+     */
     subsystemsTitle: string;
     /** States the subordinate relationship in words, below the heading. */
     subsystemsNote: string;

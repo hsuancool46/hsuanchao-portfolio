@@ -3,11 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { WorkBody } from "@/components/work-body";
-import { content, getWorkBySlug } from "@/data/content";
+import { content, getWorkBySlug, getWorkGroups } from "@/data/content";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
+
+const groups = content.works.groups;
 
 export function generateStaticParams() {
   return content.works.items.map((work) => ({ slug: work.slug }));
@@ -35,6 +37,12 @@ export default async function WorkDetailPage({ params }: Props) {
   const work = getWorkBySlug(slug);
   if (!work) notFound();
 
+  // A case reached directly from search or the home page carries no list
+  // context, so each half of the flagship relationship is stated here too.
+  const { flagship, subsystems } = getWorkGroups();
+  const parent = work.group === "subsystem" ? flagship : undefined;
+  const children = work.group === "flagship" ? subsystems : [];
+
   return (
     <div className="flex flex-1 flex-col bg-background text-foreground">
       <div className="mx-auto w-full max-w-3xl px-6 sm:px-10">
@@ -49,6 +57,20 @@ export default async function WorkDetailPage({ params }: Props) {
         </div>
 
         <header className="flex flex-col gap-4 pb-16">
+          {parent && (
+            <Link
+              href={`/works/${parent.slug}`}
+              className="group flex flex-col gap-1"
+            >
+              <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                {groups.partOfLabel}
+              </span>
+              <span className="text-sm text-muted-foreground group-hover:text-foreground group-hover:underline">
+                {parent.title}
+                <span aria-hidden> →</span>
+              </span>
+            </Link>
+          )}
           <h1 className="font-heading text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             {work.title}
           </h1>
@@ -108,6 +130,32 @@ export default async function WorkDetailPage({ params }: Props) {
               )}
             </section>
           ))}
+
+          {children.length > 0 && (
+            <section className="flex flex-col gap-6 border-t border-foreground/10 pt-10">
+              <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
+                {groups.subsystemsTitle}
+              </h2>
+              <ul className="flex flex-col gap-5">
+                {children.map((child) => (
+                  <li key={child.slug}>
+                    <Link
+                      href={`/works/${child.slug}`}
+                      className="group flex flex-col gap-1"
+                    >
+                      <span className="font-heading text-lg font-semibold text-foreground group-hover:underline sm:text-xl">
+                        {child.title}
+                        <span aria-hidden> →</span>
+                      </span>
+                      <span className="text-sm leading-7 text-muted-foreground">
+                        {child.summary}
+                      </span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
       </div>
     </div>
