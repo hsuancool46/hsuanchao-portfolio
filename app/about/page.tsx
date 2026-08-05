@@ -72,22 +72,31 @@ export default function AboutPage() {
           <p className="text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
             {methodology.intro}
           </p>
-          <ol className="flex flex-col gap-6">
+          <ol className="flex flex-col">
             {methodology.layers.map((item, i) => (
-              <li key={item.title} className="flex gap-4">
+              <li
+                key={item.title}
+                className="relative flex gap-4 pb-10 last:pb-0 sm:gap-5 sm:pb-12"
+              >
+                {i < methodology.layers.length - 1 && (
+                  <span
+                    aria-hidden
+                    className="absolute bottom-0 left-4 top-9 w-px -translate-x-1/2 bg-foreground/15"
+                  />
+                )}
                 <span
                   aria-hidden
-                  className="mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-full bg-muted text-sm font-medium text-foreground"
+                  className="flex size-8 shrink-0 items-center justify-center rounded-full bg-foreground text-sm font-semibold text-background"
                 >
                   {i + 1}
                 </span>
-                <div className="flex flex-1 flex-col gap-2">
-                  <div className="text-base font-medium text-foreground">
+                <div className="flex min-w-0 flex-1 flex-col gap-2 border-l-2 border-foreground/10 px-4 py-1 sm:px-5">
+                  <h3 className="font-heading text-lg font-semibold tracking-tight text-foreground sm:text-xl">
                     {item.title}
-                  </div>
-                  <div className="text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+                  </h3>
+                  <p className="text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
                     {item.text}
-                  </div>
+                  </p>
                 </div>
               </li>
             ))}
