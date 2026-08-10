@@ -239,6 +239,20 @@ Physical version: double-sided desk card (flowchart on the front, core guidance 
 
 Why a physical version?
 A physician is unlikely to search through a five-page document during an incident, but can quickly consult a tool already visible on the desk.`,
+            figures: [
+              {
+                file: "medical-sop-flow.png",
+                alt: "Response flowchart routing a case into one of three tracks — dispute, incident, or violence — with the evidence, reporting, and upload steps that follow each track along a T+0 to T+45 timeline.",
+                caption:
+                  "Figure. De-identified view of a medical dispute response protocol, recreated in English for portfolio display. Organization identifiers, contact details, and project references have been removed.",
+              },
+              {
+                file: "medical-sop-guide.png",
+                alt: "Quick-reference desk card listing the evidence to preserve immediately after an incident alongside the three external-communication rules: do not assign fault, do not discuss compensation, do not make public statements.",
+                caption:
+                  "Figure. De-identified quick-reference guide illustrating evidence-preservation and response principles. All organization-specific information has been removed.",
+              },
+            ],
           },
           {
             label: "Validation & Iteration",

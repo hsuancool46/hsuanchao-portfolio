@@ -124,6 +124,16 @@ export type WorkSubsection = {
   body: WorkBody;
 };
 
+/** An image shown at the end of a section, e.g. a de-identified artifact. */
+export type WorkFigure = {
+  /** File name under `public/images/`, extension included. */
+  file: string;
+  /** Descriptive alt text for the image itself. */
+  alt: string;
+  /** Small print rendered below the image. */
+  caption: string;
+};
+
 export type WorkSection = {
   /** Eyebrow above the heading, e.g. "Problem Statement". */
   label?: string;
@@ -132,6 +142,8 @@ export type WorkSection = {
   /** Set apart from the body, e.g. a pointer to the About page framework. */
   note?: string;
   subsections?: WorkSubsection[];
+  /** Rendered after the body and subsections, stacked one per row. */
+  figures?: WorkFigure[];
 };
 
 export type WorkCase = {

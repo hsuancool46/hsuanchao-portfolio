@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import type { StaticImageData } from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { WorkBody } from "@/components/work-body";
+import { WorkFigure } from "@/components/work-figure";
 import { content, getWorkBySlug, getWorkGroups } from "@/data/content";
+import type { WorkFigure as WorkFigureData } from "@/data/types";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -30,6 +33,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: work.summary,
     },
   };
+}
+
+/**
+ * Loads each figure so that `next/image` gets the intrinsic dimensions and the
+ * blur placeholder from the file itself, which a bare `/images/...` string in
+ * the content file cannot supply. The import prefix is static, so only
+ * `public/images` is bundled.
+ */
+async function SectionFigures({ figures }: { figures: WorkFigureData[] }) {
+  const images: StaticImageData[] = await Promise.all(
+    figures.map(async ({ file }) => {
+      const { default: image } = await import(`@/public/images/${file}`);
+      return image as StaticImageData;
+    }),
+  );
+
+  return (
+    <div className="flex flex-col gap-10">
+      {figures.map((figure, i) => (
+        <WorkFigure
+          key={figure.file}
+          image={images[i]}
+          alt={figure.alt}
+          caption={figure.caption}
+        />
+      ))}
+    </div>
+  );
 }
 
 export default async function WorkDetailPage({ params }: Props) {
@@ -128,6 +159,8 @@ export default async function WorkDetailPage({ params }: Props) {
                   ))}
                 </div>
               )}
+
+              {section.figures && <SectionFigures figures={section.figures} />}
             </section>
           ))}
 
