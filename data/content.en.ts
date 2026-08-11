@@ -1,7 +1,7 @@
 import type { SiteContent } from "./types";
 
 /**
- * English copy for the whole site. Source: "Portfolio Content — English (v5)".
+ * English copy for the whole site. Source: "Portfolio Content — English (v8)".
  *
  * A Traditional Chinese file (`content.zh.ts`) implements the same
  * `SiteContent` type and registers itself in `data/content.ts`.
@@ -157,6 +157,7 @@ export const en: SiteContent = {
         },
         {
           title: "Durable Systems Under Limited Resources",
+          text: "Systems designed to remain effective under changing conditions, limited capacity, and operational uncertainty.",
           example:
             "Examples: new system rollout, risk management framework design, and cross-institutional coordination.",
         },
@@ -341,8 +342,8 @@ Result: expenditure remained in the correct budget categories, supporting docume
           {
             label: "Cost-Benefit Judgment Calls",
             heading: "Two Key Decisions",
-            body: `Decision 1: Chose not to proceed with a NT$260,000 hardware subsidy
-Proceeding would have pushed total capital expenditure over the NT$1.5M public tender threshold, triggering a procurement process whose administrative cost outweighed the additional benefit. The essential equipment had already been secured through the existing procurement plan.
+            body: `Decision 1: Chose not to proceed with a planned hardware subsidy
+Proceeding would have pushed total capital expenditure over the public tender threshold, triggering a procurement process whose administrative cost outweighed the additional benefit. The essential equipment had already been secured through the existing procurement plan.
 Conclusion: compliance and administrative burden outweighed the value of increasing the expenditure rate.
 
 Decision 2: Cancelled an advanced first-aid course when enrollment remained too low
@@ -497,7 +498,7 @@ Release:
 - Digital: permanent download on the association's website
 - Physical: distributed to 200+ member clinics citywide
 
-Status: officially launched on the association's website on April 17, 2026
+Status: officially launched on the association's website in July 2026
 
 Transferability:
 The underlying design principle — converting high-pressure decisions into clear response rules — can be applied within healthcare institutions, customer service, and other high-pressure response environments.`,
@@ -526,8 +527,8 @@ Clinic physicians cannot easily leave patient care for a continuous eight-hour b
 
 Three specific decisions, all following the same logic:
 
-Decision 1: Chose not to proceed with a NT$260,000 hardware subsidy
-Reason: doing so would have pushed capital expenditure over the NT$1.5M public tender threshold; the additional administrative burden exceeded the subsidy's operational value, and the essential equipment had already been secured through the existing procurement plan.
+Decision 1: Chose not to proceed with a planned hardware subsidy
+Reason: doing so would have pushed capital expenditure over the public tender threshold; the additional administrative burden exceeded the subsidy's operational value, and the essential equipment had already been secured through the existing procurement plan.
 Judgment: compliance and operational value took priority over a higher expenditure rate.
 
 Decision 2: Cancelled an advanced first-aid course when enrollment remained too low
