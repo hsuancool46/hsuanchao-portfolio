@@ -13,11 +13,13 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { content } from "@/data/content";
+import { decisionDemo } from "@/data/decision-demo.en";
 import { cn } from "@/lib/utils";
 
 const links = [
   { href: "/about", label: content.about.meta.navLabel },
   { href: "/works", label: content.works.meta.navLabel },
+  { href: decisionDemo.nav.href, label: decisionDemo.nav.label },
   { href: "/contact", label: content.contact.meta.navLabel },
 ];
 
