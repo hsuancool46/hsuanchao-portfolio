@@ -85,12 +85,12 @@ function CaseCard({ work, featured }: { work: WorkCase; featured?: boolean }) {
 export default function WorksPage() {
   return (
     <div className="flex flex-1 flex-col bg-background text-foreground">
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <section className="flex flex-col gap-4 py-20 sm:py-24">
           <h1 className="font-heading text-3xl font-semibold tracking-tight sm:text-4xl">
             {works.title}
           </h1>
-          <p className="max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+          <p className="text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
             {works.intro}
           </p>
         </section>
@@ -106,11 +106,11 @@ export default function WorksPage() {
                     <h2 className="font-heading text-lg font-semibold tracking-tight sm:text-xl">
                       {works.groups.subsystemsTitle}
                     </h2>
-                    <p className="max-w-2xl text-sm leading-6 text-muted-foreground">
+                    <p className="text-sm leading-6 text-muted-foreground">
                       {works.groups.subsystemsNote}
                     </p>
                   </div>
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="grid gap-6 md:grid-cols-3">
                     {subsystems.map((item) => (
                       <CaseCard key={item.slug} work={item} />
                     ))}
@@ -125,11 +125,9 @@ export default function WorksPage() {
               <h2 className="font-heading text-lg font-semibold tracking-tight sm:text-xl">
                 {works.groups.standaloneTitle}
               </h2>
-              <div className="grid gap-6 md:grid-cols-2">
-                {standalone.map((item) => (
-                  <CaseCard key={item.slug} work={item} />
-                ))}
-              </div>
+              {standalone.map((item) => (
+                <CaseCard key={item.slug} work={item} />
+              ))}
             </div>
           )}
         </section>

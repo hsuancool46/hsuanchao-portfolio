@@ -5,10 +5,10 @@ import { XIcon } from "lucide-react";
 import Image, { type StaticImageData } from "next/image";
 
 /**
- * The reading column is `max-w-3xl` (768px) with `px-10` from `sm` up, so the
- * image never renders wider than 688px however large the viewport gets.
+ * The reading column is `max-w-7xl` (1280px) with `px-10` from `sm` up, so the
+ * image never renders wider than 1200px however large the viewport gets.
  */
-const COLUMN_SIZES = "(min-width: 768px) 688px, 100vw";
+const COLUMN_SIZES = "(min-width: 1280px) 1200px, 100vw";
 
 /**
  * One full-width figure inside a case study section, with its caption below it.

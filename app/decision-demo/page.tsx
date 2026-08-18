@@ -51,7 +51,7 @@ export default function DecisionDemoPage() {
 
   return (
     <div className="flex flex-1 flex-col bg-background text-foreground">
-      <div className="mx-auto w-full max-w-3xl px-6 sm:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <header className="flex flex-col gap-4 pt-16 pb-12 sm:pt-20">
           <h1 className="font-heading text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
             {claim}

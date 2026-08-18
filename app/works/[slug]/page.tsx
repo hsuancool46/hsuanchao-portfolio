@@ -76,7 +76,7 @@ export default async function WorkDetailPage({ params }: Props) {
 
   return (
     <div className="flex flex-1 flex-col bg-background text-foreground">
-      <div className="mx-auto w-full max-w-3xl px-6 sm:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <div className="pt-16 pb-4 sm:pt-20">
           <Link
             href="/works"

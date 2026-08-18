@@ -16,17 +16,17 @@ const { hero, cases, cta } = content.home;
 export default function Home() {
   return (
     <div className="flex flex-1 flex-col bg-background text-foreground">
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <section className="flex flex-col gap-8 py-24 sm:py-32">
           <div className="flex flex-col gap-4">
-            <h1 className="max-w-3xl font-heading text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl md:leading-[1.15]">
+            <h1 className="font-heading text-3xl font-semibold leading-tight tracking-tight sm:text-4xl md:text-5xl md:leading-[1.15]">
               {hero.headline}
             </h1>
-            <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
+            <p className="text-base text-muted-foreground sm:text-lg">
               {hero.subheadline}
             </p>
           </div>
-          <div className="max-w-2xl space-y-4 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+          <div className="space-y-4 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
             {hero.description.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
@@ -38,7 +38,7 @@ export default function Home() {
             <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
               {cases.title}
             </h2>
-            <p className="max-w-2xl text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground">
               {cases.note}
             </p>
           </div>
@@ -85,7 +85,7 @@ export default function Home() {
               <h2 className="font-heading text-2xl font-semibold tracking-tight sm:text-3xl">
                 {cta.title}
               </h2>
-              <p className="max-w-xl text-sm text-muted-foreground sm:text-base">
+              <p className="text-sm text-muted-foreground sm:text-base">
                 {cta.description}
               </p>
             </div>

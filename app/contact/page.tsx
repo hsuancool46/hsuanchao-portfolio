@@ -118,7 +118,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-1 flex-col bg-background text-foreground">
-      <div className="mx-auto w-full max-w-2xl px-6 sm:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <section className="flex flex-col gap-6 py-20 sm:py-24">
           <div className="flex flex-col gap-1">
             <div className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
